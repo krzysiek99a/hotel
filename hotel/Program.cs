@@ -42,6 +42,10 @@ do
         case "4":
             Rezerwacja();
             break;
+        case "5":
+            WyswietlRezerwacja();
+            break;
+
         default: break;
     }
 
@@ -116,3 +120,13 @@ void Rezerwacja()
 
 }
 
+void WyswietlRezerwacja(){
+
+    foreach (var item in rezerwacje)
+    {
+        if (item == null) break;
+        Console.WriteLine($"{item.DataStart.ToString("d")} {item.DataEnd.ToString("d")} {klienci[item.Klient - 1].Nazwisko}");
+    }   
+    
+
+}
